@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article) #redirecting to articles#show view with @article.id
       # redirect_to @article # this is shorthand code for above
     else
-      render new_article_path # or 'new'
+      render 'new'
     end
   end
 
@@ -36,7 +36,13 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article)
     else
       render 'edit'
-    end
-    
+    end 
   end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
+  end
+
 end
