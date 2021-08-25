@@ -19,7 +19,7 @@
 }
 
 .jumbotron {
-	background-image: url("jumbo");
+	background-image: asset-url("jumbo");
 	background-color: rgb(104, 104, 104);
 	background-blend-mode: multiply;
 	background-position: center center;
@@ -35,6 +35,4 @@ body {
 #page-content {
 	flex: 1 0 auto;
 	background-color: lightgray;
-}
-#sticky-footer {
 }
