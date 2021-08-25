@@ -1,7 +1,6 @@
 <div class="container pt-2 pb-5">
 	<h1 class="text-center text-dark">Articles Listing Page</h1>
 
-	<%= link_to "Create a new article", new_article_path %> 
   <% @articles.order(:id).each do |article| %>
 		<div class="row justify-content-center">
 			<div class="col-md-8 my-3">
