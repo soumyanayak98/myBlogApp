@@ -1,0 +1,40 @@
+@import "bootstrap/dist/css/bootstrap";
+
+.bg-dark {
+	background-color: rgb(131, 5, 148) !important;
+}
+.navbar-brand,
+.navbar-brand:hover {
+	font-size: 1.5rem;
+	color: white;
+	text-transform: uppercase;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: rgb(243, 243, 243);
+}
+.nav-link:hover {
+	color: white;
+}
+
+.jumbotron {
+	background-image: url("jumbo");
+	background-color: rgb(104, 104, 104);
+	background-blend-mode: multiply;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+}
+
+html,
+body {
+	height: 100vh;
+}
+#page-content {
+	flex: 1 0 auto;
+	background-color: lightgray;
+}
+#sticky-footer {
+}
