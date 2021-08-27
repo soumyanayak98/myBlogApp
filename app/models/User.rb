@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum:150}, 
                     uniqueness: { case_sensitive: false },
                     format: {with: VALID_EMAIL_REGEX}
-  validates :password, presence: true
+  # validates :password, presence: true
   private
   def downCaseEmail
     self.email = email.downcase
