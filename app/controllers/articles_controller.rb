@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
   # run set_article before each action
 
   def index
-    @articles = Article.all
+    # @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 3)
   end
 
   def show
@@ -17,7 +18,7 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:article] # shows {"title"=>"zghf", "description"=>"zdghxd"}
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = User.first # a user must be logged in to create a new article
     # render plain: @article # shows #<Article:0x00007f9460106908> // @article.inspect
     if @article.save 
       flash[:notice] = "Article Created Successfully"
