@@ -2,27 +2,30 @@
   <h4 class="text-center text-dark">Log in for My Blogs</h4>
 
   <div class="row justify-content-center text-white">
-  <div class="col-md-10">
+    <div class="col-md-10">
 
-    <%= form_with(scope: :session, url: login_path, class: "shadow p-4 bg-dark mb-2 rounded", local: true) do |f| %>
-      <div class="form-group row">
-          <%= f.label :email , class: "col-sm-2 col-form-label" %>
-          <div class="col-sm-10">
-            <%= f.email_field :email, class: "form-control", placeholder: "Enter your Email"%>
-          </div>
-      </div>
-      <div class="form-group row">
-          <%= f.label :password , class: "col-sm-2 col-form-label" %>
-          <div class="col-sm-10">
-            <%= f.password_field :password, class: "form-control", placeholder: "Enter Your password" %>
-          </div>
-      </div>
-      <div class="form-group row justify-content-center mb-0">
-        <%= f.submit "Log In", class: "btn btn-outline-light btn-lg"%>  
-      </div> 
-    <% end  %>
+      <%= form_with(scope: :session, url: login_path, class: "shadow p-4 bg-dark mb-2 rounded", local: true) do |f| %>
+        <div class="form-group row">
+            <%= f.label :email , class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-10">
+              <%= f.email_field :email, class: "form-control", placeholder: "Enter your Email"%>
+            </div>
+        </div>
+        <div class="form-group row">
+            <%= f.label :password , class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-10">
+              <%= f.password_field :password, class: "form-control", placeholder: "Enter Your password" %>
+            </div>
+        </div>
+        <div class="form-group row justify-content-center mb-0">
+          <%= f.submit "Log In", class: "btn btn-outline-light btn-lg"%>  
+        </div> 
+      <% end  %>
+      
+    </div>
   </div>
-</div>
-
+  <div class="mt-2 text-center">
+    New To My Blogs? then <%= link_to "Sign Up! here", signup_path, class: "btn btn-outline-primary" %>
+  </div>
 
 </div>
