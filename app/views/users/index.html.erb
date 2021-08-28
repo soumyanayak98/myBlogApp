@@ -22,9 +22,10 @@
 						<p class="card-text">
 							<%= pluralize(user.articles.size, 'article') %>
 						</p>
-						<%= link_to "view Profile", user_path(user), class: "btn
-						btn-outline-success mr-2" %>
-            <%= link_to "edit Profile", edit_user_path(user), class: "btn btn-outline-primary mr-2" %>
+						<%= link_to "view Profile", user_path(user), class: "btn btn-outline-success" %>
+            <% if user == curr_user %>
+              <%= link_to"edit Profile", edit_user_path(user), class: "btn btn-outline-primary ml-2" %>
+            <% end  %>
 					</div>
 					<div class="card-footer text-muted">
 						<small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
