@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   resources :users, except: [:new]
 
   resources :articles #, only: [:show, :index, :new, :create, :edit, :update, :delete]
+
+  get '/login', to: "sessions#new"
+  post '/login', to: "sessions#create"
+  post '/logout', to: "sessions#destoy"
+
 end

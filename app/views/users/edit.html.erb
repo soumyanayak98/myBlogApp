@@ -1,4 +1,7 @@
 <div class="container mt-2"> 
   <h4 class="text-center text-dark">Edit your Profile</h4>
   <%= render "form" %>
+  <div class="mt-2 text-center">
+    <%= link_to "[ Cancel & Return to user's page ]", user_path(@user), class: "btn btn-outline-success" %>
+  </div>
 </div>
