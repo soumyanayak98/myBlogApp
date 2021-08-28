@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
   # run set_article before each action
 
   def index
-    @articles = Article.all
+    # @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 3)
   end
 
   def show
