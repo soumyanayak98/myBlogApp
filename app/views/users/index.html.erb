@@ -23,8 +23,14 @@
 							<%= pluralize(user.articles.size, 'article') %>
 						</p>
 						<%= link_to "view Profile", user_path(user), class: "btn btn-outline-success" %>
-            <% if (logged_in? && user == curr_user) %>
-              <%= link_to"edit Profile", edit_user_path(user), class: "btn btn-outline-primary ml-2" %>
+            <% if logged_in? %>
+              <% if user == curr_user  %>
+                <%= link_to"edit Profile", edit_user_path(user), class: "btn btn-outline-primary ml-2" %>
+              <% end %>
+              <% if curr_user.admin? %>
+                <%= link_to"Delete Profile", user_path(user), class: "btn btn-outline-danger ml-2",
+                                             method: :delete, data: { confirm: "Are you sure?"} %>
+              <% end %>
             <% end  %>
 					</div>
 					<div class="card-footer text-muted">
