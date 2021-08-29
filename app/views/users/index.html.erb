@@ -23,7 +23,7 @@
 							<%= pluralize(user.articles.size, 'article') %>
 						</p>
 						<%= link_to "view Profile", user_path(user), class: "btn btn-outline-success" %>
-            <% if user == curr_user %>
+            <% if (logged_in? && user == curr_user) %>
               <%= link_to"edit Profile", edit_user_path(user), class: "btn btn-outline-primary ml-2" %>
             <% end  %>
 					</div>
