@@ -1,0 +1,25 @@
+<div class="container p-2">
+
+  <h3 class="text-center text-dark">Category: <%= @category.name %></h3>
+
+  <% if logged_in? && curr_user.admin? %>
+    <div class="text-center mt-2">
+      <%= link_to "Edit category", edit_category_path(@category), class: "btn btn-outline-primary"%>   
+    </div>
+  <% end %>
+
+  <h5 class="text-center text-dark mt-4">Articles</h5>
+
+  <div class="flickr_pagination">
+    <div class="page_info mb-2">
+      <%= page_entries_info @articles %>
+    </div>
+    <%= will_paginate @articles, container: false %> <%#, page_links: false %>
+  </div>
+
+  <%= render "articles/article" %>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @articles, container: false %> <%#, page_links: false %>
+  </div>
+</div>
