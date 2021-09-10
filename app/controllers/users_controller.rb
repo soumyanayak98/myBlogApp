@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   def user_params
-    params.require(:user).permit(:username,:email, :password)
+    params.require(:user).permit(:username,:email, :password, :password_confirmation)
   end
   def same_user
     if curr_user != @user && !curr_user.admin?
