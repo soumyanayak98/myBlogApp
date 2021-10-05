@@ -83,3 +83,12 @@ body {
 .flickr_pagination .next_page {
 	margin-left: 1em;
 }
+
+trix-toolbar {
+	display: none !important;
+}
+
+.comments {
+	max-height: 190px;
+	overflow-y: auto;
+}

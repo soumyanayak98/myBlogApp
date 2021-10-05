@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   # post '/users', to: "users#create"
   resources :users, except: [:new]
 
-  resources :articles #, only: [:show, :index, :new, :create, :edit, :update, :destroy]
+  resources :articles do #, only: [:show, :index, :new, :create, :edit, :update, :destroy]
+    resources :comments, only: [:create]
+  end 
 
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"

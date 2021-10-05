@@ -13,3 +13,8 @@ Turbolinks.start();
 ActiveStorage.start();
 
 import "bootstrap";
+
+import "controllers"
+
+require("trix")
+require("@rails/actiontext")

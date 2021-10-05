@@ -2,7 +2,7 @@
   <h3 class="text-center"><%= @article.title %></h3>
 
   <div class="row justify-content-center">
-    <div class="col-md-8 my-3">
+    <div class="col-md-8">
       <div class="card text-center shadow bg-white rounded ">
         <div class="card-header font-italic">
          <p class="mb-2" > by <%= @article.user.username%></p>
@@ -23,12 +23,24 @@
                                                         class: "btn btn-outline-danger btn-sm ml-2" %>
           <% end %>
         </div>
-        <div class="card-footer text-muted">
+        <div class="card-footer text-muted py-1">
           <small>Created <%= time_ago_in_words(@article.created_at) %> ago &
             updated <%= time_ago_in_words(@article.updated_at) %> ago
           </small>
         </div>
       </div>
     </div>  
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-6">
+      <h6><%= pluralize(@article.comments.size, "Comment") %></h6>
+      <div class="comments">
+        <%= render @article.comments %>
+      </div>
+    </div>
+    <div class="col-6">
+      <%= render "comments/form" %>
+    </div>
   </div>
 </div>
