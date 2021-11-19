@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :articles do #, only: [:show, :index, :new, :create, :edit, :update, :destroy]
     resources :comments, only: [:create]
   end 
-
+  resources :mentions, only: [:index]
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"

@@ -92,3 +92,18 @@ trix-toolbar {
 	max-height: 190px;
 	overflow-y: auto;
 }
+.mention {
+	font-weight: 550;
+}
+
+trix-editor > div {
+	display: inline-flex !important;
+	padding: 0 !important;
+}
+trix-editor > div > span {
+	display: none !important;
+}
+
+figure {
+	margin-bottom: 0;
+}

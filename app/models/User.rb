@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include ActionText::Attachable
 
   before_save :downCaseEmail
   
@@ -11,6 +12,10 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false },
                     format: {with: VALID_EMAIL_REGEX}
   validates_confirmation_of :password
+
+  def to_trix_content_attachment_partial_path
+    to_partial_path
+  end
   private
   def downCaseEmail
     self.email = email.downcase
